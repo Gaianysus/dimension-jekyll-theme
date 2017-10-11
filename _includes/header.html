@@ -8,7 +8,9 @@
 			</div>
 			<div class="content">
 				<div class="inner">
+          <a href=https://shop.gaianysus.com/>
 					<h1>{{ site.title }}</h1>
+          </a>
 					<p>{{ site.description }}</p>
 				</div>
 			</div>
@@ -16,7 +18,9 @@
 				<ul>
 					{% for page in site.pages  %}
 					{% unless page.layout == 'default' %}
+          {% if page.navvy == 'positive' %}
 					<li><a href="#{{ page.title }}">{{ page.title }}</a></li>
+          {% endif %}
 					{% endunless %}{% endfor %}
 				</ul>
 			</nav>

@@ -1,5 +1,110 @@
 ---
 title: about
 image: pic03.jpg
+navvy: positive
 ---
-Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.
+
+<!-- ******ABOUT****** -->
+<section id="about" class="about section">
+  <div class="container">
+    <h4 class="intro text-center">We love <span class="animated favthing">Gardening</span></h4>
+    <p class="intro text-center">{{ site.org_full_description }}</p>
+  </div><!--//container-->
+</section><!--//about-->
+
+<!-- ******JOIN****** -->
+<section id="join" class="join section">
+  <div class="container text-center">
+    <h2 class="title">Join the Gaianysus Mailing List</h2>
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 text-right text-right-sm">
+        <h1 class="join-us-intro">We Need Your Help.<br>  Join the Revolution!</h1>
+      </div>
+      <div class="col-sm-5 text-left text-left-sm">
+        <p>Sign up to receive updates, progress reports and ways to get involved. We're excited to have you join our amazing community!</p>
+        {% if site.tinyletter_username %}
+        <p><em>No spam. Just the occasional update with tech tidbits and possibly a sale.</em></p>
+        <div class="row">
+          <div class="col-sm-12">
+            <form class="form-inline" role="form" action="https://tinyletter.com/{{ site.tinyletter_username }}" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/{{ site.tinyletter_username }}', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+              <div class="input-group input-group-lg col-sm-12">
+                <label class="sr-only" for="tlemail">Email address</label>
+                <input type="email" class="form-control" name="email" id="tlemail" placeholder="email address" />
+                <div class="input-group-btn">
+                  <button type="submit" class="button btn btn-cta-secondary">Join!</button>
+                </div><!-- /btn-group -->
+              </div><!-- /input-group -->
+            </form>
+          </div>
+        </div>
+        {% elsif site.mailchimp_embed_code %}
+        <p><em>No spam. Just the occasional update.</em></p>
+        <div id="mc_embed_signup">
+          <form action="{{ site.mailchimp_embed_code }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate bs-component" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <div class="form-group">
+                <label for="mce-EMAIL" class="sr-only">Email Address</label>
+                <input placeholder="email address" type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="mce-FNAME" class="sr-only">Given / First Name </label>
+                    <input placeholder="given / first name" type="text" value="" name="FNAME" class="form-control" id="mce-FNAME">
+                  </div>
+                  <div class="col-xs-6">
+                    <label for="mce-LNAME" class="sr-only">Family / Last Name </label>
+                    <input placeholder="family / last name" type="text" value="" name="LNAME" class="form-control" id="mce-LNAME">
+                  </div>
+                </div>
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="{{ site.mailchimp_spam_guard }}" tabindex="-1" value=""></div>
+              <div class="clear">
+
+                <input type="submit" value="Join Us!" name="subscribe" id="mc-embedded-subscribe" class="button btn-success btn-block btn" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        <!--End mc_embed_signup-->
+        {% else %}
+        <p><em>Sorry, email signup is not available at this time <i class="fa fa-frown-o"></i></em></p>
+        {% endif %}
+
+        <!--form style="padding:3px;text-align:center;" action="https://tinyletter.com/{{ site.tinyletter_username }}" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/{{ site.tinyletter_username }}', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">Subscribe to Updates</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" data-behavior="placeholder" placeholder="Email Address" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /><p></p></form-->
+
+
+      </div>
+    </div>
+  </div><!--//container-->
+</section><!--//join-->
+<!-- ******CONTACT****** -->
+<section id="contact" class="contact section has-pattern">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="info text-center">
+        <h4 class="sub-title">Get Connected</h4>
+        <ul class="social-icons list-inline">
+        {% if site.twitter_username %}
+        <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        {% endif %}
+        {% if site.facebook_username %}
+        <li><a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        {% endif %}
+        {% if site.instagram_username %}
+        <li><a href="http://instagram.com/{{ site.instagram_username }}"><i class="fa fa-instagram"></i></a></li>
+        {% endif %}
+        {% if site.org_general_email_inbox %}
+        <li class="last"><a href="mailto: {{ site.org_general_email_inbox }}"><i class="fa fa-envelope"></i></a></li>
+        {% endif %}
+      </ul>
+      </div><!--//info-->
+    </div><!--//contact-inner-->
+  </div><!--//container-->
+</section><!--//contact-->
